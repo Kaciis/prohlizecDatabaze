@@ -1,7 +1,7 @@
 <?php
-$host = '192.168.142.11';
-$db = 'ip_3';
-$user = 'root';
+$host = 'localhost';
+$db = 'c83db';
+$user = 'c83Kacis';
 $pass = '';
 $charset = 'utf8mb4';
 
