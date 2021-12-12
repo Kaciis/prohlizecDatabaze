@@ -8,7 +8,7 @@ if (!$mistnostID) {
     exit();
 }
 
-$stmt = $pdo->prepare("SELECT room_id,r.no as roomNumber,  r.name as roomName, r.phone as roomPhone, e.name as jmeno, e.surname as prijmeni 
+$stmt = $pdo->prepare("SELECT room_id,r.no as roomNumber,  r.name as roomName, r.phone as roomPhone, e.name as jmeno, e.surname as prijmeni, e.employee_id
 FROM `room` AS r 
 INNER JOIN `key` as k ON r.room_id = k.room 
 INNER JOIN `employee` as e ON k.employee = e.employee_id 
@@ -57,13 +57,15 @@ $stmtosoba->execute([$mistnostID]);
         echo "<dt>Telefon</dt>";
         echo "<dd>{$row['roomPhone']}</dd>";
         echo "<dt>Lidé</dt>";
-        echo "<dd>Dodělat...</dd>";
+        foreach($stmtosoba as $row2){
+            echo "<dd><a href='clovek.php?clovek_id=".$row2['employee_id']."'>". $row2['surname']. " ". $row2['nameshort']."</a></dd>";
+        }
         echo "<dt>Průměrná mzda</dt>";
         $plat = $stmtplat->fetch();
         echo "<dd>" . $plat['plat'] . "</dd>";
         echo "<dt>Klíče</dt>";
         foreach($stmt as $roww){
-            echo ("<dd><a href='/clovek.php?clovekID=".$roww['clovekID']."'>" . $roww['jmeno'] ." ". $roww['prijmeni'] ."</a><br /></dd>");
+            echo ("<dd><a href='/clovek.php?clovek_id=".$roww['employee_id']."'>" . $roww['jmeno'] ." ". $roww['prijmeni'] ."</a><br /></dd>");
         }
         echo "</dl><br />";
     ?>

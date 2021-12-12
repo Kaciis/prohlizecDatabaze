@@ -73,27 +73,27 @@
         <thead>
             <tr>
                 <th>Název
-                    <a href='?poradi=nazev_down' " . (($poradi == 'nazev_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></span></a>
-                    <a href='?poradi=nazev_up'  " . (($poradi == 'nazev_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></span></a>
+                    <a href='?poradi=nazev_down' " . (($poradi == 'nazev_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></a>
+                    <a href='?poradi=nazev_up'  " . (($poradi == 'nazev_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></a>
                 </th>
                 <th>Číslo
-                    <a href='?poradi=cislo_down'  " . (($poradi == 'cislo_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></span></a>
-                    <a href='?poradi=cislo_up'  " . (($poradi == 'cislo_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></span></a>
+                    <a href='?poradi=cislo_down'  " . (($poradi == 'cislo_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></a>
+                    <a href='?poradi=cislo_up'  " . (($poradi == 'cislo_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></a>
                 </th>
                 <th>Telefon
-                    <a href='?poradi=telefon_down'  " . (($poradi == 'telefon_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></span></a>
-                    <a href='?poradi=telefon_up'  " . (($poradi == 'telefon_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></span></a>
+                    <a href='?poradi=telefon_down'  " . (($poradi == 'telefon_down') ? "class='sorted'" : '') . "><i class='bi bi-arrow-down'></i></a>
+                    <a href='?poradi=telefon_up'  " . (($poradi == 'telefon_up') ? "class='sorted'" : '') . "><i class='bi bi-arrow-up'></i></a>
                 </th>
             </tr>
             </thead>
             <tbody>
         ");
         foreach($stmt as $row){
-            echo "<tr><td><a href='./mistnost.php?mistnost={$row['room_id']}'>{$row['name']}<a/></td><td>{$row['no']}</td><td>{$row['phone']}</td></tr>";
+            echo "<tr><td><a href='./mistnost.php?mistnost={$row['room_id']}'>{$row['name']}</a></td><td>{$row['no']}</td><td>{$row['phone']}</td></tr>";
         }
     }
 
-
+    echo "</table>"
     ?>
 </body>
 </html>
